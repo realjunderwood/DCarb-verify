@@ -64,6 +64,8 @@ function denyy(id) {
 	db.collection("transactions").doc(doc.id).update({progress: "denied"});
 
 }
+
+
 </script>
 
 <script type="module">
@@ -186,8 +188,8 @@ $("#verificationtable").append(`
 		<td><img src="${item.imagePath1}" class="receiptimg"><img src="magnify.png" width="30px" class="button"></td>
 		
 		<td>
-			<img class="approdeny" src="approve.png" width="25px" onclick="approve(${id})">
-			<img class="approdeny" src="deny.png" width="25px" onclick="deny(${id})">
+			<img class="approdeny" src="approve.png" width="25px" onclick="approvee(${item.id})">
+			<img class="approdeny" src="deny.png" width="25px" onclick="denyy(${item.id})">
 		</td>
 	</tr>
 
@@ -225,9 +227,9 @@ $("#verificationtable").append(`
 
 updatee();
 setInterval(function(){
-//updatee();
+updatee();
 
-},2000);
+},10000);
 
 
 setTimeout(function(){
